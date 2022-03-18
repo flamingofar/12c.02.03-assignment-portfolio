@@ -10,15 +10,27 @@ function start() {
 	const section_three = document.querySelector("#contact");
 	const scrollContainer = document.querySelector("main");
 
-	workLink.addEventListener("click", () => {
-		scrollContainer.scrollTo({ left: 0, top: section_two.offsetTop, behavior: "smooth" });
-	});
-	aboutLink.addEventListener("click", () => {
-		scrollContainer.scrollTo({ left: 0, top: section_one.offsetTop, behavior: "smooth" });
-	});
-	contactLink.addEventListener("click", () => {
-		scrollContainer.scrollTo({ left: 0, top: section_three.offsetTop, behavior: "smooth" });
-	});
+	if (window.clientWidth > 600) {
+		workLink.addEventListener("click", () => {
+			scrollContainer.scrollTo({ left: 0, top: section_two.offsetTop, behavior: "smooth" });
+		});
+		aboutLink.addEventListener("click", () => {
+			scrollContainer.scrollTo({ left: 0, top: section_one.offsetTop, behavior: "smooth" });
+		});
+		contactLink.addEventListener("click", () => {
+			scrollContainer.scrollTo({ left: 0, top: section_three.offsetTop, behavior: "smooth" });
+		});
+	} else {
+		workLink.addEventListener("click", () => {
+			scrollContainer.scrollTo({ left: 0, top: section_two.offsetTop - 100, behavior: "smooth" });
+		});
+		aboutLink.addEventListener("click", () => {
+			scrollContainer.scrollTo({ left: 0, top: section_one.offsetTop - 100, behavior: "smooth" });
+		});
+		contactLink.addEventListener("click", () => {
+			scrollContainer.scrollTo({ left: 0, top: section_three.offsetTop - 100, behavior: "smooth" });
+		});
+	}
 
 	//* Button
 	const viewBtns = document.querySelectorAll(".project_btn");

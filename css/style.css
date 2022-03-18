@@ -27,6 +27,12 @@ body {
 	color: var(--color-text);
 }
 
+@media screen and (max-width: 600px) {
+	body {
+		flex-direction: column;
+	}
+}
+
 p {
 	margin-bottom: 1rem;
 }
@@ -81,19 +87,8 @@ img {
 
 .img_container {
 	width: 100%;
-	border-radius: 10px;
+	border-radius: 10px 10px 0 0;
 	overflow: hidden;
-}
-
-header {
-	flex: 1;
-	display: flex;
-	flex-direction: column;
-	justify-content: flex-start;
-	align-items: center;
-
-	box-shadow: 0 0 0.5rem 0.3rem var(--color-main-shadow);
-	z-index: 1;
 }
 
 nav {
@@ -127,7 +122,7 @@ li::before {
 	bottom: 0;
 	width: 100%;
 	height: 0.08em;
-	background: black;
+	background: var(--color-accent);
 	transform-origin: right;
 	transition: transform 300ms;
 	transform: scale(0);
@@ -144,9 +139,26 @@ li:hover::before {
 	display: grid;
 	place-content: center;
 }
+.hero_container > div {
+	padding-inline: 1rem;
+}
 
 header {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: center;
 	background: var(--color-main);
+
+	box-shadow: 0 0 0.5rem 0.3rem var(--color-main-shadow);
+	z-index: 1;
+}
+
+@media screen and (max-width: 600px) {
+	header {
+		flex: 0.4;
+	}
 }
 
 header h1  {
@@ -173,6 +185,12 @@ main > section {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+}
+
+@media screen and (max-width: 600px) {
+	main > section {
+		height: 80vh;
+	}
 }
 
 section > div {
@@ -218,13 +236,48 @@ section button {
 
 #about,
 #contact {
-	display: grid;
-	place-content: center;
 	background-color: var(--color-secondary);
 	color: var(--color-text-dark);
 }
+
+#about > div {
+}
 .project:nth-child(even) {
 	background-color: var(--color-main);
+}
+
+.details-form {
+	display: flex;
+	gap: 1rem;
+}
+.details-form div {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+}
+form {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+}
+form > div:nth-child(2) {
+	display: flex;
+	flex-direction: column;
+}
+
+form input {
+	width: 100%;
+}
+
+input,
+textarea {
+	border: none;
+	appearance: none;
+	resize: none;
+}
+input:focus,
+textarea:focus {
+	outline: solid 2px var(--color-accent);
 }
 
 /** PAGE TRANSITION */
