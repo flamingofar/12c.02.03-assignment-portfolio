@@ -5,7 +5,12 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link href="https://fonts.googleapis.com/css2?family=Poiret+One&family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet" />
+
 		<link rel="stylesheet" href="./css/style.css" />
+		<script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
 		<script defer src="./js/index.js"></script>
 		<title>12C.02.03 Assignment Portfolio</title>
 	</head>
@@ -13,47 +18,84 @@
 		<header>
 			<nav>
 				<ul>
-					<li>WORK</li>
-					<li>ABOUT</li>
-					<li>CONTACT</li>
+					<li class="about">ABOUT</li>
+					<li class="work">WORK</li>
+					<li class="contact">CONTACT</li>
 				</ul>
 			</nav>
 			<div class="hero_container">
 				<div>
-					<h1>Lorem ipsym vera</h1>
-					<h3>Lorem ipsum vera can votum Lorem ipsum vera can votum Lorem ipsum vera can votum Lorem ipsum vera can votum</h3>
+					<h1>Malte Skjoldager</h1>
+					<h5>Frontend Development | KEA 3. Semester</h5>
 				</div>
 			</div>
 		</header>
 		<main>
 			<section id="about" class="">
 				<h2>ABOUT</h2>
+				<p>Nysger</p>
 			</section>
-			<section id="project_one" class="">
-				<h2>Lorem ipsum vera can</h2>
-				<img src="#" alt="project image" />
-				<h4>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam er</h4>
+			<section id="project_one" class="project">
+				<div>
+					<h2>Fonts and Cards</h2>
+					<div class="img_container">
+						<img src="./assets/mockup-placeholder.png" alt="project image" />
+					</div>
+					<div>
+						<h5>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam er</h5>
+						<div>
+							<button class="project_btn" data-project="1">View</button>
+						</div>
+					</div>
+				</div>
 			</section>
-			<section id="project_two" class="">
-				<h2>Lorem ipsum vera can</h2>
-				<img src="#" alt="project image" />
-				<h4>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam er</h4>
+			<section id="project_two" class="project">
+				<div>
+					<h2>Color and Animations</h2>
+					<img src="./assets/mockup-placeholder.png" alt="project image" />
+					<div>
+						<h5>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam er</h5>
+						<div>
+							<button class="project_btn" data-project="2">View</button>
+						</div>
+					</div>
+				</div>
 			</section>
-			<section id="project_three" class="">
-				<h2>Lorem ipsum vera can</h2>
-				<img src="#" alt="project image" />
-				<h4>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam er</h4>
+			<section id="project_three" class="project">
+				<div>
+					<h2>Responsive Design</h2>
+					<img src="./assets/mockup-placeholder.png" alt="project image" />
+					<div>
+						<h5>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam er</h5>
+						<div>
+							<button class="project_btn" data-project="3">View</button>
+						</div>
+					</div>
+				</div>
 			</section>
 			<section id="project_four" class="">
-				<h2>Lorem ipsum vera can</h2>
-				<img src="#" alt="project image" />
-				<h4>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam er</h4>
+				<div>
+					<h2>Designing With Frameworks</h2>
+					<img src="./assets/mockup-placeholder.png" alt="project image" />
+					<div>
+						<h5>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam er</h5>
+						<div>
+							<button class="project_btn" data-project="4">View</button>
+						</div>
+					</div>
+				</div>
 			</section>
-			<section id="contact" class="">
-				<h2>CONTACT</h2>
-				<img src="#" alt="project image" />
-				<h4>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam er</h4>
+			<section id="contact" class="project">
+				<div>
+					<h2>CONTACT</h2>
+					<img src="./assets/mockup-placeholder.png" alt="project image" />
+					<h4>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam er</h4>
+				</div>
 			</section>
 		</main>
+		<div class="page-trans-start-container">
+			<div class="page-trans-start"></div>
+			<h2>PROJECT NAME</h2>
+		</div>
 	</body>
 </html>

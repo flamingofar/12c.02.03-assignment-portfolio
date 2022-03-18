@@ -1,0 +1,137 @@
+:root {
+	--poiret-one: "Poiret One", cursive;
+	--roboto-condensed: "Roboto Condensed", sans-serif;
+
+	--color-main: #1b2e26;
+	--color-main-shadow: #0c161231;
+	--color-main-off: #31463d;
+	--color-secondary: #fcf4e7;
+	--color-text: #fcfefd;
+	--color-text-dark: #0a2e1c;
+	--color-accent: #ea4c2ff;
+}
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	text-decoration: none;
+}
+/* Defines a grid width three variable columns for main */
+main {
+	background: var(--color-secondary);
+	display: grid;
+	grid-template-columns:
+		minmax(1rem, 1fr)
+		minmax(auto, 1500px)
+		minmax(1rem, 1fr);
+	gap: 1rem 0;
+}
+/* Every direct child of main gets positioned in the middle column */
+main > * {
+	grid-column: 2;
+	padding-bottom: 4rem;
+}
+
+/* Every element with the class .full inherits the grid, 
+  and fills up the three columns */
+.full {
+	grid: inherit;
+	grid-column: 1 / -1;
+}
+/* Every child of .full fills up the middle column */
+.full > * {
+	grid-column: 2;
+}
+
+img {
+	width: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: var(--poiret-one);
+}
+
+p,
+a,
+label {
+	font-family: var(--roboto-condensed);
+	font-weight: 300;
+	font-size: 1.2rem;
+	color: black;
+}
+
+/** SECTIOIN 1 */
+.section-1 {
+}
+
+.section-1 div:first-child {
+	background-color: lightblue;
+
+	height: 30vh;
+	display: grid;
+	place-content: center;
+}
+.section-1 div:last-child {
+	width: 100%;
+	display: flex;
+	padding-block: 5rem;
+	justify-content: center;
+}
+.section-1 div:last-child h3 {
+	width: 50ch;
+	font-weight: 300;
+	font-size: x-large;
+
+	font-family: var(--roboto-condensed);
+}
+h1 {
+	color: var(--color-text);
+	font-size: 6rem;
+}
+
+/** SECTIONS */
+.section_details {
+	display: flex;
+	gap: 2rem;
+}
+.section_details h2 {
+	margin-bottom: 0.5rem;
+}
+.section_details > * {
+	flex: 1;
+}
+.section_details > div:last-child {
+	display: grid;
+	place-content: center;
+	padding: 5rem;
+}
+
+.section-3 > div:first-child {
+	order: 2;
+}
+
+/** Transition Done */
+.page-trans-done {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	background: rgb(250, 228, 168);
+
+	display: grid;
+	place-content: center;
+}
+.page-trans-done-container h2 {
+	color: var(--color-text-dark);
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	font-size: 5rem;
+	transform: translate(-50%, -50%);
+}
