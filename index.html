@@ -10,7 +10,10 @@
 		<link href="https://fonts.googleapis.com/css2?family=Poiret+One&family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet" />
 
 		<link rel="stylesheet" href="./css/style.css" />
-		<script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollToPlugin.min.js"></script>
+
 		<script defer src="./js/index.js"></script>
 		<title>12C.02.03 Assignment Portfolio</title>
 	</head>
@@ -25,19 +28,31 @@
 			</nav>
 			<div class="hero_container">
 				<div>
-					<h1>Malte Skjoldager</h1>
-					<h5>Frontend Development | KEA 3. Semester</h5>
+					<div class="h1_wrapper wrapper">
+						<h1>Malte Skjoldager</h1>
+					</div>
+					<div class="title_wrapper wrapper">
+						<h5>Frontend Development | KEA 3. Semester</h5>
+					</div>
 				</div>
 			</div>
 		</header>
 		<main>
 			<section id="about" class="">
 				<div>
-					<h2>ABOUT</h2>
-					<p>
-						Lorem ipsum dolor sit amet consectetur adipisicing elit. In reiciendis sapiente alias nemo, beatae et reprehenderit. Non iusto est similique cum dolore optio et magni mollitia! Dicta optio
-						ipsa excepturi odit, quae fuga voluptatum illo eveniet nobis a! Culpa libero suscipit sed architecto totam perferendis nisi pariatur voluptatum in. Quibusdam?
-					</p>
+					<div class="wrapper">
+						<h2>ABOUT</h2>
+					</div>
+					<div class="wrapper">
+						<p class="">The name is Malte Skjoldager, 28 years of age and located in Copenhagen. I love tinkering and exploring in tech.</p>
+					</div>
+					<div class="wrapper"><p>Some would say that I am all over the place, when it comes to exploring the world of tech. I call it, loving what I do.</p></div>
+					<div class="wrapper">
+						<p>
+							I'm exploring React.js, Three.js, webgl and the MERN stack. I say <em>exploring</em>, because I have only been in the game for about a year now. Before discovering this field, I was a
+							light and video technician at all sorts of live events. This background has formed me into the nerd that I am today, figuring out best solutions and not overcomplicating stuff.
+						</p>
+					</div>
 				</div>
 			</section>
 			<section id="project_one" class="project">
@@ -47,7 +62,7 @@
 						<img src="./assets/fonts_ui_mockup.webp" alt="project image" />
 					</div>
 					<div>
-						<h5>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam er</h5>
+						<h5>This project is about fonts, typescaling and UI cards. Here i went through font pairing, visiual hierachy and displaying information nice as a ui card.</h5>
 						<div>
 							<button class="project_btn" data-project="1">View</button>
 						</div>
@@ -61,7 +76,7 @@
 						<img src="./assets/colors_animations_mockup.webp" alt="project image" />
 					</div>
 					<div>
-						<h5>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam er</h5>
+						<h5>This project is about color, colorpalette and animations. Here i went through font color theory, creating colorpalettes and the web animations api, WAAPI.</h5>
 						<div>
 							<button class="project_btn" data-project="2">View</button>
 						</div>
@@ -75,7 +90,10 @@
 						<img src="./assets/responsive_mockup.webp" alt="project image" />
 					</div>
 					<div>
-						<h5>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam er</h5>
+						<h5>
+							This project is about rasponsive design, conditional styling and fluid typography. Here i went through styling responsive via media queries, fluid typography and making the product work
+							on most screen sizes.
+						</h5>
 						<div>
 							<button class="project_btn" data-project="3">View</button>
 						</div>
@@ -89,7 +107,10 @@
 						<img src="./assets/frameworks_mockup.webp" alt="project image" />
 					</div>
 					<div>
-						<h5>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam er</h5>
+						<h5>
+							This project is about frameworks, using different tools and implementing a framework. Here i went through different tools like pico, bootstrap and tailwind. In the project i utilized
+							tailwind.
+						</h5>
 						<div>
 							<button class="project_btn" data-project="4">View</button>
 						</div>
@@ -116,7 +137,7 @@
 						</div>
 						<div><button type="submit">Send</button></div>
 					</form>
-					<h4>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam er</h4>
+					<h4>If you have any questions, queries or just want to chat. Send me and email through the form above and lets get to know each other!</h4>
 				</div>
 			</section>
 		</main>
