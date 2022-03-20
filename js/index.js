@@ -34,23 +34,6 @@ function start() {
 	}
 
 	//* ANIMATIONS
-	const startScreenAnim = () => {
-		const startTL = gsap.timeline();
-		startTL
-			.to(".page-trans-start", {
-				scaleY: 1,
-				ease: Power4.easeOut,
-				duration: 1.3,
-			})
-			.to(".page-trans-start", {
-				transformOrigin: "top",
-				scaleY: 0,
-				duration: 1.3,
-				delay: 0.5,
-				ease: Power4.easeOut,
-			});
-	};
-	startScreenAnim();
 	startAnimations();
 
 	//* Button
@@ -110,12 +93,43 @@ function startAnimations() {
 	aboutTitle.innerHTML = spanLetter(aboutTitle.textContent);
 	const aboutText = document.querySelectorAll("#about p");
 
+	// MASTER TIMELINE
+	const animMaster = gsap.timeline({ paused: true });
+
+	// LOAD ANIMATION
+	const staggerTime = 0.3;
+	gsap.set(".page-trans-start", { transformOrigin: "bottom", scaleY: 100 });
+	gsap.set(".page-trans-start-container h2", {
+		display: "inline",
+		opacity: 1,
+	});
+	const startTL = gsap.timeline();
+	startTL
+
+		.to(".page-trans-start", {
+			transformOrigin: "top",
+			scaleY: 0,
+			duration: 1.3,
+			delay: 0.5,
+			ease: Power4.easeOut,
+		})
+		.to(
+			".page-trans-start-container h2",
+			{
+				opacity: 0,
+				duration: 0.5,
+			},
+			"-=1"
+		);
+
+	animMaster.add(startTL);
+
 	// HEADER TIMELINE
-	const staggerTime = 0.4;
 	const headerTL = gsap.timeline();
 	headerTL
 		.from(".hero_container h1 span", {
 			y: 70,
+			opacity: 0,
 			stagger: {
 				amount: staggerTime,
 			},
@@ -130,8 +144,10 @@ function startAnimations() {
 			},
 			"-=0.4"
 		);
-
+	headerTL.delay(-0.7);
+	animMaster.add(headerTL);
 	// MAIN TIMELINE
+
 	const mainTL = gsap.timeline();
 	mainTL
 		.from("#about h2 span", {
@@ -152,20 +168,58 @@ function startAnimations() {
 			},
 			"-=0.4"
 		);
+	mainTL.delay(-1.5);
+	animMaster.add(mainTL);
 
-	gsap.from("#project_one h2", {
-		scrollTrigger: {
-			scroller: "main",
-			trigger: "#project_one",
-			start: "top center",
-			end: "bottom bottom",
-			toggleActions: "play none none none",
-			markers: true,
-		},
+	animMaster.play();
+
+	// MAIN SCROLL
+	const parameters = {
 		y: 100,
 		opacity: 0,
-		duration: stagger,
+		duration: staggerTime,
+		duration: 0.4,
+	};
+
+	const projectOneTL = gsap.timeline({
+		defaults: parameters,
+		scrollTrigger: {
+			trigger: "#project_one",
+			scroller: "main",
+			start: "10% center",
+		},
 	});
+	projectOneTL.from("#project_one h2", {}).from("#project_one .img_container", {}, "-=0.2").from("#project_one .details h5", {}, "-=0.2").from("#project_one .details button", {}, "-=0.2");
+
+	const projectTwoTL = gsap.timeline({
+		defaults: parameters,
+		scrollTrigger: {
+			trigger: "#project_two",
+			scroller: "main",
+			start: "10% center",
+		},
+	});
+	projectTwoTL.from("#project_two h2", {}).from("#project_two .img_container", {}, "-=0.2").from("#project_two .details h5", {}, "-=0.2").from("#project_two .details button", {}, "-=0.2");
+
+	const projectThreeTL = gsap.timeline({
+		defaults: parameters,
+		scrollTrigger: {
+			trigger: "#project_three",
+			scroller: "main",
+			start: "10% center",
+		},
+	});
+	projectThreeTL.from("#project_three h2", {}).from("#project_three .img_container", {}, "-=0.2").from("#project_three .details h5", {}, "-=0.2").from("#project_three .details button", {}, "-=0.2");
+
+	const projectFourTL = gsap.timeline({
+		defaults: parameters,
+		scrollTrigger: {
+			trigger: "#project_four",
+			scroller: "main",
+			start: "10% center",
+		},
+	});
+	projectFourTL.from("#project_four h2", {}).from("#project_four .img_container", {}, "-=0.2").from("#project_four .details h5", {}, "-=0.2").from("#project_four .details button", {}, "-=0.2");
 }
 
 function spanLetter(word) {
